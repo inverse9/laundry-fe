@@ -115,9 +115,7 @@ const Navbar = () => {
             isOpen ? "ml-64" : "ml-0"
           }`}
         >
-          <h2 className="text-2xl font-semibold">
-            <Outlet />
-          </h2>
+          <Outlet />
         </main>
       </div>
     </div>

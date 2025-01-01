@@ -1,7 +1,7 @@
 import Navbar from "./pages/Navbar";
 
 function App() {
-  return <>app</>;
+  return <></>;
 }
 
 export default App;
