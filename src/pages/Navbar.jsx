@@ -17,6 +17,9 @@ const Navbar = () => {
   const menuItems = [
     { to: "/", label: "Home" },
     { to: "/barang", label: "Barang" },
+    { to: "/laundry", label: "Laundry" },
+    { to: "/driver", label: "Driver" },
+    { to: "/notification", label: "Notification" },
   ];
 
   return (
