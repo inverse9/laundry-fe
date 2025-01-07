@@ -6,7 +6,7 @@ import App from "./App";
 import Barang from "./pages/laundry/Barang";
 import Navbar from "./pages/Navbar";
 import CreateBarang from "./pages/laundry/CreateBarang";
-import Laundry from "./pages/admin/laundry";
+import Laundry from "./pages/admin/Laundry";
 import Driver from "./pages/admin/Driver";
 import NotificationContent from "./pages/admin/NotificationContent";
 import CreateNotificationContent from "./pages/admin/CreateNotificationContent";
