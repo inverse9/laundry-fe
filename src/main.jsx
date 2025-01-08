@@ -9,9 +9,13 @@ import CreateBarang from "./pages/laundry/CreateBarang";
 import Laundry from "./pages/admin/laundry";
 import Driver from "./pages/admin/Driver";
 import NotificationContent from "./pages/admin/NotificationContent";
+import User from "./pages/admin/User.jsx";
+import Order from "./pages/laundry/Order";
 import CreateNotificationContent from "./pages/admin/CreateNotificationContent";
 import CreateDriver from "./pages/admin/CreateDriver";
 import CreateLaundry from "./pages/admin/CreateLaundry";
+import CreateUser from "./pages/admin/CreateUser";
+import CreateOrder from "./pages/laundry/CreateOrder.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -39,6 +43,13 @@ createRoot(document.getElementById("root")).render(
             path="create-notification-content"
             element={<CreateNotificationContent />}
           />
+          <Route path="user" element={<User />} />
+          <Route path="create-user/:id" element={<CreateUser />} />
+          <Route path="create-user" element={<CreateUser />} />
+
+          <Route path="order" element={<Order />} />
+          <Route path="create-order/:id" element={<CreateOrder />} />
+          <Route path="create-order" element={<CreateOrder />} />
         </Route>
       </Routes>
     </Router>
