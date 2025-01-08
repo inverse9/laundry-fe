@@ -55,7 +55,7 @@ createRoot(document.getElementById("root")).render(
 
           <Route path="service" element={<Service />} />
           <Route path="create-service/:id" element={<CreateService />} />
-          <Route path="create-service" element={<CreateService />} />
+          <Route path="reate-service" element={<CreateService />} />
         </Route>
       </Routes>
     </Router>
