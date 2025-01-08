@@ -28,8 +28,9 @@ const Navbar = () => {
   return (
     <div className="flex h-screen">
       <div
-        className={`fixed inset-y-0 left-0 transform ${isOpen ? "translate-x-0" : "-translate-x-full"
-          } transition-transform duration-300 ease-in-out bg-gray-800 text-white w-64 z-40`}
+        className={`fixed inset-y-0 left-0 transform ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-300 ease-in-out bg-gray-800 text-white w-64 z-40`}
       >
         <div className="flex items-center justify-center h-16 bg-gray-900"></div>
         <nav className="mt-10">
@@ -38,7 +39,8 @@ const Navbar = () => {
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                `block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white ${isActive ? "bg-gray-700" : ""
+                `block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white ${
+                  isActive ? "bg-gray-700" : ""
                 }`
               }
             >
@@ -68,7 +70,7 @@ const Navbar = () => {
               ></path>
             </svg>
           </button>
-          <h1 className="text-2xl font-semibold">Navbar</h1>
+          {/* <h1 className="text-2xl font-semibold">Navbar</h1> */}
           <div className="relative">
             <button
               onClick={() => setShowNotifications(!showNotifications)}
@@ -95,13 +97,15 @@ const Navbar = () => {
                   {notifications.map((notification, index) => (
                     <li
                       key={index}
-                      className={`px-4 py-2 ${notification.read ? "bg-gray-700" : "bg-gray-800"
-                        }`}
+                      className={`px-4 py-2 ${
+                        notification.read ? "bg-gray-700" : "bg-gray-800"
+                      }`}
                     >
                       <div className="flex items-center">
                         <span
-                          className={`inline-block w-2 h-2 rounded-full mr-2 ${notification.read ? "bg-gray-400" : "bg-blue-500"
-                            }`}
+                          className={`inline-block w-2 h-2 rounded-full mr-2 ${
+                            notification.read ? "bg-gray-400" : "bg-blue-500"
+                          }`}
                         ></span>
                         {notification.message}
                       </div>
@@ -113,8 +117,9 @@ const Navbar = () => {
           </div>
         </header>
         <main
-          className={`flex-1 p-4 transition-margin duration-300 ease-in-out ${isOpen ? "ml-64" : "ml-0"
-            }`}
+          className={`flex-1 p-4 transition-margin duration-300 ease-in-out ${
+            isOpen ? "ml-64" : "ml-0"
+          }`}
         >
           <Outlet />
         </main>
