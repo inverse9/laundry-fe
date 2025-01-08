@@ -22,6 +22,7 @@ const Navbar = () => {
     { to: "/notification", label: "Notification" },
     { to: "/user", label: "User" },
     { to: "/order", label: "Order" },
+    { to: "/service", label: "Service" },
   ];
 
   return (

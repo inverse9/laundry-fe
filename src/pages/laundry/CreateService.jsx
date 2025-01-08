@@ -1,17 +1,14 @@
 import { useEffect, useState } from "react";
 
 import { useLocation, useNavigate } from "react-router-dom";
-import { createOrder, updateOrder } from "../../api/order";
+import { createService, updateService } from "../../api/service";
 
-const CreateOrder = () => {
+const CreateService = () => {
     const { state } = useLocation();
     const [formData, setFormData] = useState({
-        user_id: "",
         laundry_id: "",
-        driver_id: "",
-        barang_id: "",
-        service_id: "",
-        total: "",
+        nama: "",
+        harga: "",
     });
 
     const navigate = useNavigate();
@@ -29,15 +26,15 @@ const CreateOrder = () => {
 
         try {
             if (state) {
-                await updateOrder(state.id, formData);
-                navigate("/order");
+                await updateService(state.id, formData);
+                navigate("/service");
             } else {
-                await createOrder(formData);
-                navigate("/order");
+                await createService(formData);
+                navigate("/service");
             }
         } catch (err) {
             console.error(
-                state ? "Error updating order:" : "Error creating order:",
+                state ? "Error updating service:" : "Error creating service:",
                 err.message
             );
         }
@@ -46,29 +43,14 @@ const CreateOrder = () => {
     useEffect(() => {
         if (state) {
             setFormData({
-                user_id: state.user_id,
                 laundry_id: state.laundry_id,
-                driver_id: state.driver_id,
-                barang_id: state.barang_id,
-                service_id: state.service_id,
-                total: state.total,
+                nama: state.nama,
+                harga: state.harga,
             });
         }
     }, [state]);
     return (
         <form onSubmit={handleSubmit} className="max-w-lg mx-auto p-4">
-            <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2">
-                    User ID:
-                </label>
-                <input
-                    type="text"
-                    name="user_id"
-                    value={formData.user_id}
-                    onChange={handleChange}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                />
-            </div>
             <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2">
                     Laundry ID:
@@ -83,48 +65,24 @@ const CreateOrder = () => {
             </div>
             <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2">
-                    Driver ID:
+                    Nama:
                 </label>
                 <input
                     type="text"
-                    name="driver_id"
-                    value={formData.driver_id}
+                    name="nama"
+                    value={formData.nama}
                     onChange={handleChange}
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
             </div>
             <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2">
-                    Barang ID:
+                    Harga:
                 </label>
                 <input
                     type="text"
-                    name="barang_id"
-                    value={formData.barang_id}
-                    onChange={handleChange}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                />
-            </div>
-            <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2">
-                    Service ID:
-                </label>
-                <input
-                    type="text"
-                    name="service_id"
-                    value={formData.service_id}
-                    onChange={handleChange}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                />
-            </div>
-            <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2">
-                    Total:
-                </label>
-                <input
-                    type="text"
-                    name="total"
-                    value={formData.total}
+                    name="harga"
+                    value={formData.harga}
                     onChange={handleChange}
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
@@ -139,4 +97,4 @@ const CreateOrder = () => {
     );
 };
 
-export default CreateOrder;
+export default CreateService;
